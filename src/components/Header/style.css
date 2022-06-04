@@ -1,0 +1,11 @@
+header{
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #CAD4EF;
+    background-image: linear-gradient(#CAD4EF,#fff)
+}
+header > input {
+    height: 1em;
+}
