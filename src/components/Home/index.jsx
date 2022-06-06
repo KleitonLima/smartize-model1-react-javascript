@@ -1,13 +1,21 @@
+import Card from "../Card";
 import "./style.css";
 
 const Home = () => {
   return (
-    <div>
+    <main>
       <div id="productResearched">
-        <h1>Produto encontrado</h1>
+        <h2>Produto(s) encontrado(s)</h2>
       </div>
-      <div id="allProducts">Produtos disponíveis</div>
-    </div>
+      <div id="allProducts">
+        <h1>Produtos disponíveis</h1>
+      </div>
+      <div>
+        <Card />
+        <Card />
+        <Card />
+      </div>
+    </main>
   );
 };
 

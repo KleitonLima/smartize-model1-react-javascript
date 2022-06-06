@@ -1,12 +1,12 @@
-header{
-    height: 10em;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #CAD4EF;
-    background-image: linear-gradient(#CAD4EF,#fff);
-    border-radius: 15px;
+header {
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #cad4ef;
+  background-image: linear-gradient(#cad4ef, #fff);
+  border-radius: 15px 15px 0px 0px;
 }
 header > input {
-    height: 1em;
+  height: 1em;
 }
