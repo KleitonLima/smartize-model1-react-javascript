@@ -7,6 +7,7 @@ const App = () => {
     <div className="app-container">
       <Header />
       <Home />
+      
     </div>
   );
 };
