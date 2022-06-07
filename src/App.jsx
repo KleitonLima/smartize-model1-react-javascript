@@ -4,10 +4,10 @@ import Home from "./components/Home";
 
 const App = () => {
   return (
-    <body>
+    <div>
       <Header />
       <Home />
-    </body>
+    </div>
   );
 };
 

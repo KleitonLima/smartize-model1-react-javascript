@@ -9,6 +9,7 @@ const Header = () => {
         <input type="text" placeholder="Digite o tipo do produto" />
         <button>O</button>
       </div>
+      <i className="fa-solid fa-bag-shopping"></i>
     </header>
   );
 };

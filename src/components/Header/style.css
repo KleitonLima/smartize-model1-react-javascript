@@ -10,3 +10,8 @@ header {
 header > input {
   height: 1em;
 }
+header > i {
+  font-size: xx-large;
+  color: #5a76fa;
+  cursor: pointer;
+}

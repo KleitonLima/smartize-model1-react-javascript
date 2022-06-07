@@ -1,0 +1,9 @@
+.card {
+  height: 10em;
+  width: 20em;
+  border: 0.2em solid #0d49ee;
+  display: flex;
+}
+.card > img {
+  height: 9em;
+}

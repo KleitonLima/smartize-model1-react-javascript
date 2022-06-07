@@ -8,3 +8,9 @@ main {
   background-image: linear-gradient(#fff, #cad4ef);
   border-radius: 0px 0px 15px 15px;
 }
+.card-container{
+ display: flex; 
+}
+image {
+  height: 9em;
+}
