@@ -11,7 +11,7 @@ const Home = () => {
         <h2>Produto(s) encontrado(s):</h2>
       </div>
       <div id="allProducts">
-        <h1>Produtos disponíveis:</h1>
+        <h2>Produtos disponíveis:</h2>
       </div>
       <div className="card-container">
         <Card image="https://gafashop.com.br/product_images/x/432/2__59144_std.png" type="Smartphone" model="S10 Plus, 128GB, 8GB RAM" price="R$1599,00" />

@@ -7,7 +7,7 @@ const Card = (props) => {
       <div>
         <h3>{props.type}</h3>
         <h3>{props.model}</h3>
-        <h3>{props.price}</h3>
+        <h3>{props.price}</h3> 
       </div>
     </div>
   );
