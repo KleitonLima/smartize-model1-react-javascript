@@ -1,9 +1,23 @@
 .card {
   height: 10em;
   width: 20em;
-  border: 0.2em solid #0d49ee;
+  border: 0.2em solid #5a76fa;
   display: flex;
+  gap: 1em;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 1em;
+  box-shadow: 0px 0px 20px -2px #00000080;
+  padding: 0.5em;
 }
 .card > img {
   height: 9em;
+}
+.card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+.card > div > h2 {
+  color: #008000;
 }

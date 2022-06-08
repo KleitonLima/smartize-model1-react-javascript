@@ -3,7 +3,7 @@ import "./style.css";
 const Card = ({ products }) => {
   return (
     <div className="card">
-      <img src={products.foto} alt={`Foto de ${products.model}`} />
+      <img src={products.foto} alt={`Foto de ${products.modelo}`} />
       <div>
         <h3>{products.tipo}</h3>
         <h3>{products.marca}</h3>
