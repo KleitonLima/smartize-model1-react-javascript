@@ -1,13 +1,15 @@
 import "./style.css";
 
-const Card = (props) => {
+const Card = ({ products }) => {
   return (
     <div className="card">
-      <img src={props.image} alt={`Foto de ${props.model}`} />
+      <img src={products.foto} alt={`Foto de ${products.model}`} />
       <div>
-        <h3>{props.type}</h3>
-        <h3>{props.model}</h3>
-        <h3>{props.price}</h3> 
+        <h3>{products.tipo}</h3>
+        <h3>{products.marca}</h3>
+        <h3>{products.modelo}</h3>
+        <h3>{products.condicao}</h3>
+        <h2>{`R$${products.preco.toFixed(2)}`}</h2>
       </div>
     </div>
   );

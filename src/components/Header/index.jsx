@@ -5,10 +5,10 @@ const Header = () => {
   return (
     <header>
       <img src={logo} width="150px" alt="Logo Smartize" />
-      <div>
+      {/* <div>
         <input type="text" placeholder="Digite o tipo do produto" />
         <button>O</button>
-      </div>
+      </div> */}
       <i className="fa-solid fa-bag-shopping"></i>
     </header>
   );
