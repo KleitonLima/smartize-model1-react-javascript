@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 
 const Home = () => {
   const [filterInput, setFilterInput] = useState([]);
-  
   const [products, setProducts] = useState([]);
+
   const getProducts = async () => {
     const res = await fetch("http://localhost:3001/produtos/listar-produtos");
     const productsList = await res.json();
@@ -36,7 +36,7 @@ const Home = () => {
         <div className="card-container">
           {filterInput
             ? products
-                .filter((element) => element.tipo.includes(filterInput))
+                .filter((element) => element.tipo.toLowerCase().includes(filterInput))
                 .map((element) => {
                   return <Card key={element._id} products={element} />;
                 })
