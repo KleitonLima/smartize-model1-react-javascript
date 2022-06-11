@@ -1,10 +1,11 @@
 .card {
   height: 10em;
-  width: 20em;
+  width: 23em;
   border: 0.2em solid #5a76fa;
   display: flex;
   gap: 1em;
   align-items: center;
+  justify-content: space-evenly;
   background-color: #fff;
   border-radius: 1em;
   box-shadow: 0px 0px 20px -2px #00000080;

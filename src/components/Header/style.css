@@ -10,8 +10,13 @@ header {
 header > input {
   height: 1em;
 }
-header > i {
-  font-size: xx-large;
+header > div {
+  width: 4.3em;
+  display: flex;
+  justify-content: space-between;
+}
+header > div > i {
+  font-size: 2em;
   color: #5a76fa;
   cursor: pointer;
 }
