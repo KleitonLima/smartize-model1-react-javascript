@@ -35,7 +35,13 @@ const ModalCadastreProduct = ({ closeModal }) => {
       body: JSON.stringify(newProduct),
     });
 
-    res.status !== 201 ? toast.success("Produto cadastrado!") : toast.error("Falha no cadastro!");
+    // res.status !== 201 ? toast.success("Produto cadastrado!") : toast.error("Falha no cadastro!");
+
+    if (res.status !== 201) {
+      return toast.error("Falha no cadastro!");
+    }
+    
+    toast.success("Produto cadastrado!");
 
     const product = await res.json();
 
