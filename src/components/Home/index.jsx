@@ -1,21 +1,10 @@
 import Card from "../Card";
 import "./style.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-const Home = () => {
+const Home = ({products}) => {
   const [filterInput, setFilterInput] = useState([]);
-  const [products, setProducts] = useState([]);
-
-  const getProducts = async () => {
-    const res = await fetch("http://localhost:3001/produtos/listar-produtos");
-    const productsList = await res.json();
-
-    setProducts(productsList);
-  };
-  useEffect(() => {
-    getProducts();
-  }, []);
-
+  
   return (
     <main>
       <div>

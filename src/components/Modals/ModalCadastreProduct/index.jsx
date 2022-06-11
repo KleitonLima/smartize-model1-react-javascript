@@ -2,7 +2,7 @@ import "./style.css";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 
-const ModalCadastreProduct = ({ closeModal }) => {
+const ModalCadastreProduct = ({ closeModal, getProducts }) => {
   const [tipo, setTipo] = useState(""),
     [marca, setMarca] = useState(""),
     [modelo, setModelo] = useState(""),
@@ -40,12 +40,13 @@ const ModalCadastreProduct = ({ closeModal }) => {
     if (res.status !== 201) {
       return toast.error("Falha no cadastro!");
     }
-    
+
     toast.success("Produto cadastrado!");
 
     const product = await res.json();
 
     closeModal();
+    getProducts();
     return product;
   };
 

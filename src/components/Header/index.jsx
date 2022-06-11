@@ -4,7 +4,7 @@ import { toast } from "react-hot-toast";
 import ModalCadastreProduct from "../Modals/ModalCadastreProduct";
 import { useState } from "react";
 
-const Header = () => {
+const Header = ({getProducts}) => {
   const [showModalCadastre, setShowModalCadastre] = useState(false);
 
   const handleShowModalCadastre = () => {
@@ -20,7 +20,7 @@ const Header = () => {
           <i onClick={handleShowModalCadastre} className="fa-solid fa-square-plus"></i>
         </div>
       </header>
-      {showModalCadastre && <ModalCadastreProduct closeModal={handleShowModalCadastre} />}
+      {showModalCadastre && <ModalCadastreProduct closeModal={handleShowModalCadastre} getProducts={getProducts} />}
     </>
   );
 };
