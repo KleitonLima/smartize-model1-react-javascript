@@ -8,6 +8,14 @@ main {
   background-image: linear-gradient(#fff, #cad4ef);
   border-radius: 0px 0px 15px 15px;
 }
+.inputSearch {
+  display: flex;
+  width: 16rem;
+  padding-block: 2rem;
+}
+.inputFilter > input {
+  border: 0.2rem solid #5a76fa;
+}
 .card-container {
   display: flex;
   flex-wrap: wrap;

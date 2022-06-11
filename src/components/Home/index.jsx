@@ -17,9 +17,17 @@ const Home = () => {
 
   return (
     <main>
-      {/* <div id="productResearched">
-        <h2>Produto(s) encontrado(s):</h2>
-      </div> */}
+      <div>
+        <div className="inputFilter">
+          <input type="text" placeholder="Digite o tipo do produto" />
+          {/* <button>
+            <i className="fa-solid fa-magnifying-glass"></i>
+          </button> */}
+        </div>
+        {/* <div id="productResearched">
+          <h2>Produto(s) encontrado(s):</h2>
+        </div> */}
+      </div>
       <div>
         <h2>Produtos disponíveis:</h2>
       </div>
