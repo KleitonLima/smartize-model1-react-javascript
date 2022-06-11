@@ -3,8 +3,9 @@ import "./style.css";
 import { useState, useEffect } from "react";
 
 const Home = () => {
+  const [filterInput, setFilterInput] = useState([]);
+  
   const [products, setProducts] = useState([]);
-
   const getProducts = async () => {
     const res = await fetch("http://localhost:3001/produtos/listar-produtos");
     const productsList = await res.json();
@@ -13,13 +14,13 @@ const Home = () => {
   };
   useEffect(() => {
     getProducts();
-  });
+  }, []);
 
   return (
     <main>
       <div>
         <div className="inputFilter">
-          <input type="text" placeholder="Digite o tipo do produto" />
+          <input onChange={(event) => setFilterInput(event.target.value)} type="text" placeholder="Digite o tipo do produto" />
           {/* <button>
             <i className="fa-solid fa-magnifying-glass"></i>
           </button> */}
@@ -33,9 +34,15 @@ const Home = () => {
       </div>
       <div id="allProducts">
         <div className="card-container">
-          {products.map((element) => {
-            return <Card key={element._id} products={element} />;
-          })}
+          {filterInput
+            ? products
+                .filter((element) => element.tipo.includes(filterInput))
+                .map((element) => {
+                  return <Card key={element._id} products={element} />;
+                })
+            : products.map((element) => {
+                return <Card key={element._id} products={element} />;
+              })}
         </div>
       </div>
     </main>

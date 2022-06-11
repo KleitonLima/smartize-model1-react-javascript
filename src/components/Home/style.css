@@ -8,7 +8,7 @@ main {
   background-image: linear-gradient(#fff, #cad4ef);
   border-radius: 0px 0px 15px 15px;
 }
-.inputSearch {
+.inputFilter {
   display: flex;
   width: 16rem;
   padding-block: 2rem;
