@@ -1,7 +1,7 @@
 import "./style.css";
 import logo from "../../assets/images/logo.png";
-import { toast } from "react-hot-toast";
 import ModalCadastreProduct from "../Modals/ModalCadastreProduct";
+import { toast } from "react-hot-toast";
 import { useState } from "react";
 
 const Header = ({ getProducts }) => {
