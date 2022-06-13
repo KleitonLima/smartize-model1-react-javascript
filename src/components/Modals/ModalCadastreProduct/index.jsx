@@ -52,12 +52,12 @@ const ModalCadastreProduct = ({ closeModal, getProducts }) => {
 
   return (
     <div className="modal-background">
-      <div className="modal-container">
-        <div className="modal-head">
+      <div className="modalCadastre-container">
+        <div className="modalCadastre-header">
           <h2>Cadastro de novo produto</h2>
           <i onClick={closeModal} className="fa-solid fa-square-xmark"></i>
         </div>
-        <div className="modal-body">
+        <div className="modalCadastre-body">
           <input value={tipo} onChange={(event) => setTipo(event.target.value)} name="tipo" placeholder="Digite o tipo do produto..." />
           <input value={marca} onChange={(event) => setMarca(event.target.value)} name="marca" placeholder="Digite a marca..." />
           <input value={modelo} onChange={(event) => setModelo(event.target.value)} name="modelo" placeholder="Digite o modelo..." />
@@ -67,7 +67,7 @@ const ModalCadastreProduct = ({ closeModal, getProducts }) => {
           <input value={foto} onChange={(event) => setFoto(event.target.value)} name="foto" placeholder="Digite o link da foto..." type="url" />
           <input value={preco} onChange={(event) => setPreco(event.target.value)} name="preco" placeholder="Digite o preço..." type="number" />
           <input value={garantia} onChange={(event) => setGarantia(event.target.value)} name="garantia" placeholder="Digite o tempo de garantia..." />
-          <div className="modal-buttons">
+          <div className="modalCadastre-button">
             <button onClick={handleCadastreProduct}>Cadastrar</button>
           </div>
         </div>
