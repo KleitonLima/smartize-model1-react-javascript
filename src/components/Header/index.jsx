@@ -4,7 +4,7 @@ import { toast } from "react-hot-toast";
 import ModalCadastreProduct from "../Modals/ModalCadastreProduct";
 import { useState } from "react";
 
-const Header = ({getProducts}) => {
+const Header = ({ getProducts }) => {
   const [showModalCadastre, setShowModalCadastre] = useState(false);
 
   const handleShowModalCadastre = () => {
@@ -16,7 +16,7 @@ const Header = ({getProducts}) => {
       <header>
         <img src={logo} width="150px" alt="Logo Smartize" />
         <div>
-          <i onClick={() => toast.error("Sacola em desenvolvimento...")} className="fa-solid fa-bag-shopping"></i>
+          <i onClick={() => toast.error("Carinho em desenvolvimento...")} className="fa-solid fa-cart-shopping"></i>
           <i onClick={handleShowModalCadastre} className="fa-solid fa-square-plus"></i>
         </div>
       </header>
