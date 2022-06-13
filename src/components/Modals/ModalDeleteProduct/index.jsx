@@ -8,7 +8,7 @@ const MoldaDeleteProduct = () => {
           <h2>Deseja excluir o produto?</h2>
         </div>
         <div className="modalDelete-actions">
-          <button onClick={() => {}}>SIM</button>
+          <button>SIM</button>
           <button>NÃO</button>
         </div>
       </div>

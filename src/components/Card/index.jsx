@@ -17,7 +17,7 @@ const Card = ({ products }) => {
           <div>
             <i id="cart-icon" className="fa-solid fa-cart-plus"></i>
             <i className="fa-solid fa-pen-to-square"></i>
-            <i onClick={setShowModalDelete(!showModalDelete)} id="trash-icon" className="fa-solid fa-trash"></i>
+            <i onClick={() => setShowModalDelete(!showModalDelete)} id="trash-icon" className="fa-solid fa-trash"></i>
           </div>
         </div>
       </div>
