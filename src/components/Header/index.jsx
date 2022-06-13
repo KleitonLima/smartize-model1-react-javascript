@@ -16,7 +16,7 @@ const Header = ({ getProducts }) => {
       <header>
         <img src={logo} width="150px" alt="Logo Smartize" />
         <div>
-          <i onClick={() => toast.error("Carinho em desenvolvimento...")} className="fa-solid fa-cart-shopping"></i>
+          <i onClick={() => toast.error("Carrinho em desenvolvimento...")} className="fa-solid fa-cart-shopping"></i>
           <i onClick={handleShowModalCadastre} className="fa-solid fa-square-plus"></i>
         </div>
       </header>

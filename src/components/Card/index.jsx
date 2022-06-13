@@ -2,6 +2,7 @@ import { useState } from "react";
 import MoldaDeleteProduct from "../Modals/ModalDeleteProduct";
 import ModalEditProduct from "../Modals/ModalEditProduct";
 import "./style.css";
+import { toast } from "react-hot-toast";
 
 const Card = ({ products, getProducts }) => {
   const [showModalDelete, setShowModalDelete] = useState(false),
@@ -25,7 +26,7 @@ const Card = ({ products, getProducts }) => {
           <h3>{products.condicao}</h3>
           <h2>{`R$${products.preco.toFixed(2)}`}</h2>
           <div>
-            <i id="cart-icon" className="fa-solid fa-cart-plus"></i>
+            <i onClick={() => toast.error("Carrinho em desenvolvimento...")} id="cart-icon" className="fa-solid fa-cart-plus"></i>
             <i onClick={handleShowModalEdit} className="fa-solid fa-pen-to-square"></i>
             <i onClick={handleShowModalDelete} id="trash-icon" className="fa-solid fa-trash"></i>
           </div>
