@@ -5,7 +5,7 @@ const MoldaDeleteProduct = () => {
     <div className="modal-background">
       <div className="modalDelete-container">
         <div className="modalDelete-header">
-          <h2>Deseja excluir o produto {product.tipo}?</h2>
+          <h2>Deseja excluir o produto?</h2>
         </div>
         <div className="modalDelete-actions">
           <button onClick={() => {}}>SIM</button>
