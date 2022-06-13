@@ -1,15 +1,31 @@
 import "./style.css";
+import { toast } from "react-hot-toast";
 
-const MoldaDeleteProduct = () => {
+const MoldaDeleteProduct = ({ closeModal, products, getProducts }) => {
+  const handleDeleteProduct = async () => {
+    const res = await fetch(`http://localhost:3001/produtos/deletar-produto/${products._id}`, {
+      method: "DELETE",
+      mode: "cors",
+    });
+
+    if (res.status !== 200) {
+      return toast.error("Falha em deletar o produto!");
+    }
+
+    closeModal();
+    toast.success("Produto deletado com sucesso!");
+    getProducts();
+  };
+
   return (
     <div className="modal-background">
       <div className="modalDelete-container">
         <div className="modalDelete-header">
-          <h2>Deseja excluir o produto?</h2>
+          <h2>Deseja excluir o produto {products.modelo}?</h2>
         </div>
         <div className="modalDelete-actions">
-          <button>SIM</button>
-          <button>NÃO</button>
+          <button onClick={handleDeleteProduct}>SIM</button>
+          <button onClick={closeModal}>NÃO</button>
         </div>
       </div>
     </div>

@@ -2,8 +2,12 @@ import { useState } from "react";
 import MoldaDeleteProduct from "../Modals/ModalDeleteProduct";
 import "./style.css";
 
-const Card = ({ products }) => {
+const Card = ({ products, getProducts }) => {
   const [showModalDelete, setShowModalDelete] = useState(false);
+
+  const handleShowModalDelete = () => {
+    return setShowModalDelete(!showModalDelete);
+  };
   return (
     <>
       <div className="card">
@@ -17,11 +21,11 @@ const Card = ({ products }) => {
           <div>
             <i id="cart-icon" className="fa-solid fa-cart-plus"></i>
             <i className="fa-solid fa-pen-to-square"></i>
-            <i onClick={() => setShowModalDelete(!showModalDelete)} id="trash-icon" className="fa-solid fa-trash"></i>
+            <i onClick={handleShowModalDelete} id="trash-icon" className="fa-solid fa-trash"></i>
           </div>
         </div>
       </div>
-      {showModalDelete && <MoldaDeleteProduct />}
+      {showModalDelete && <MoldaDeleteProduct closeModal={handleShowModalDelete} products={products} getProducts={getProducts} />}
     </>
   );
 };

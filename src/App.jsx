@@ -21,7 +21,7 @@ const App = () => {
     <div className="app-container">
       <Toaster />
       <Header getProducts={getProducts} />
-      <Home products={products} />
+      <Home products={products} getProducts={getProducts} />
       <Footer />
     </div>
   );

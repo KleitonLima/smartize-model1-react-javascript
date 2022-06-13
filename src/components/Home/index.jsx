@@ -2,9 +2,9 @@ import Card from "../Card";
 import "./style.css";
 import { useState } from "react";
 
-const Home = ({products}) => {
+const Home = ({ products, getProducts }) => {
   const [filterInput, setFilterInput] = useState([]);
-  
+
   return (
     <main>
       <div>
@@ -27,10 +27,10 @@ const Home = ({products}) => {
             ? products
                 .filter((element) => element.tipo.toLowerCase().includes(filterInput))
                 .map((element) => {
-                  return <Card key={element._id} products={element} />;
+                  return <Card getProducts={getProducts} key={element._id} products={element} />;
                 })
             : products.map((element) => {
-                return <Card key={element._id} products={element} />;
+                return <Card getProducts={getProducts} key={element._id} products={element} />;
               })}
         </div>
       </div>
