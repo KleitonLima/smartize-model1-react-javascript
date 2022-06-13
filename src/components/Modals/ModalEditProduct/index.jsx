@@ -1,6 +1,7 @@
 import "./style.css";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
+import axios from "axios";
 
 const ModalEditProduct = ({ products, getProducts, closeModal }) => {
   const [tipo, setTipo] = useState(products.tipo),
@@ -26,25 +27,16 @@ const ModalEditProduct = ({ products, getProducts, closeModal }) => {
       garantia,
     };
 
-    const res = await fetch(`http://localhost:3001/produtos/atualizar-produto/${products._id}`, {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-      },
-      mode: "cors",
-      body: JSON.stringify(editedProduct),
-    });
+    const res = await axios.put(`http://localhost:3001/produtos/atualizar-produto/${products._id}`, editedProduct);
 
     if (res.status !== 200) {
       return toast.error("Falha na edição!");
     }
 
-    const product = await res.json();
-
     closeModal();
     getProducts();
     toast.success("Produto cadastrado!");
-    return product;
+    return editedProduct;
   };
 
   return (

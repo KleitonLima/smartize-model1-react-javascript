@@ -1,12 +1,10 @@
 import "./style.css";
 import { toast } from "react-hot-toast";
+import axios from "axios";
 
 const MoldaDeleteProduct = ({ closeModal, products, getProducts }) => {
   const handleDeleteProduct = async () => {
-    const res = await fetch(`http://localhost:3001/produtos/deletar-produto/${products._id}`, {
-      method: "DELETE",
-      mode: "cors",
-    });
+    const res = await axios.delete(`http://localhost:3001/produtos/deletar-produto/${products._id}`);
 
     if (res.status !== 200) {
       return toast.error("Falha em deletar o produto!");

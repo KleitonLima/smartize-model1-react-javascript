@@ -1,4 +1,5 @@
 import "./style.css";
+import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 
@@ -26,27 +27,17 @@ const ModalCadastreProduct = ({ closeModal, getProducts }) => {
       garantia,
     };
 
-    const res = await fetch("http://localhost:3001/produtos/criar-produto", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      mode: "cors",
-      body: JSON.stringify(newProduct),
-    });
+    const res = await axios.post("http://localhost:3001/produtos/criar-produto", newProduct);
 
     // res.status !== 201 ? toast.success("Produto cadastrado!") : toast.error("Falha no cadastro!");
-
     if (res.status !== 201) {
       return toast.error("Falha no cadastro!");
     }
 
-    const product = await res.json();
-
     closeModal();
     getProducts();
     toast.success("Produto cadastrado!");
-    return product;
+    return newProduct;
   };
 
   return (
