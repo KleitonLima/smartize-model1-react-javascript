@@ -11,9 +11,9 @@ const Card = ({ products }) => {
         <h3>{products.condicao}</h3>
         <h2>{`R$${products.preco.toFixed(2)}`}</h2>
         <div>
-          <i className="fa-solid fa-cart-plus"></i>
+          <i id="cart-icon" className="fa-solid fa-cart-plus"></i>
           <i className="fa-solid fa-pen-to-square"></i>
-          <i className="fa-solid fa-trash"></i>
+          <i id="trash-icon" className="fa-solid fa-trash"></i>
         </div>
       </div>
     </div>

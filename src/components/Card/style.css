@@ -31,3 +31,9 @@
   font-size: 1.2rem;
   color: #5a76fa;
 }
+#cart-icon {
+  color: #00c000;
+}
+#trash-icon {
+  color: #ff0000;
+}
