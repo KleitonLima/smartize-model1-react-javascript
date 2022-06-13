@@ -2,19 +2,19 @@ import "./style.css";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 
-const ModalCadastreProduct = ({ closeModal, getProducts }) => {
-  const [tipo, setTipo] = useState(""),
-    [marca, setMarca] = useState(""),
-    [modelo, setModelo] = useState(""),
-    [descricao, setDescricao] = useState(""),
-    [cor, setCor] = useState(""),
-    [condicao, setCondicao] = useState(""),
-    [foto, setFoto] = useState(""),
-    [preco, setPreco] = useState(""),
-    [garantia, setGarantia] = useState("");
+const ModalEditProduct = ({ products, getProducts, closeModal }) => {
+  const [tipo, setTipo] = useState(products.tipo),
+    [marca, setMarca] = useState(products.marca),
+    [modelo, setModelo] = useState(products.modelo),
+    [descricao, setDescricao] = useState(products.descricao),
+    [cor, setCor] = useState(products.cor),
+    [condicao, setCondicao] = useState(products.condicao),
+    [foto, setFoto] = useState(products.foto),
+    [preco, setPreco] = useState(products.preco),
+    [garantia, setGarantia] = useState(products.garantia);
 
-  const handleCadastreProduct = async () => {
-    const newProduct = {
+  const handleEditProduct = async () => {
+    const editedProduct = {
       tipo,
       marca,
       modelo,
@@ -26,19 +26,17 @@ const ModalCadastreProduct = ({ closeModal, getProducts }) => {
       garantia,
     };
 
-    const res = await fetch("http://localhost:3001/produtos/criar-produto", {
-      method: "POST",
+    const res = await fetch(`http://localhost:3001/produtos/atualizar-produto/${products._id}`, {
+      method: "PUT",
       headers: {
-        "Content-Type": "application/json",
+        "Content-type": "application/json",
       },
       mode: "cors",
-      body: JSON.stringify(newProduct),
+      body: JSON.stringify(editedProduct),
     });
 
-    // res.status !== 201 ? toast.success("Produto cadastrado!") : toast.error("Falha no cadastro!");
-
-    if (res.status !== 201) {
-      return toast.error("Falha no cadastro!");
+    if (res.status !== 200) {
+      return toast.error("Falha na edição!");
     }
 
     const product = await res.json();
@@ -53,7 +51,7 @@ const ModalCadastreProduct = ({ closeModal, getProducts }) => {
     <div className="modal-background">
       <div className="modal-container">
         <div className="modal-header">
-          <h2>Cadastro de novo produto</h2>
+          <h2>Edição do produto</h2>
           <i onClick={closeModal} className="fa-solid fa-square-xmark"></i>
         </div>
         <div className="modal-body">
@@ -67,7 +65,7 @@ const ModalCadastreProduct = ({ closeModal, getProducts }) => {
           <input value={preco} onChange={(event) => setPreco(event.target.value)} name="preco" placeholder="Digite o preço..." type="number" />
           <input value={garantia} onChange={(event) => setGarantia(event.target.value)} name="garantia" placeholder="Digite o tempo de garantia..." />
           <div>
-            <button onClick={handleCadastreProduct}>Cadastrar</button>
+            <button onClick={handleEditProduct}>SALVAR</button>
           </div>
         </div>
       </div>
@@ -75,4 +73,4 @@ const ModalCadastreProduct = ({ closeModal, getProducts }) => {
   );
 };
 
-export default ModalCadastreProduct;
+export default ModalEditProduct;
