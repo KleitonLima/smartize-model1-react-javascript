@@ -11,7 +11,7 @@ const App = () => {
 
   const getProducts = async () => {
     const res = await api.get("/produtos/listar-produtos");
-
+    
     setProducts(res.data);
   };
   useEffect(() => {
