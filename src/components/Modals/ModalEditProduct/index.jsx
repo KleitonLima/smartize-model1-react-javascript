@@ -1,7 +1,7 @@
 import "./style.css";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
-import axios from "axios";
+import api from "../../../api";
 
 const ModalEditProduct = ({ products, getProducts, closeModal }) => {
   const [tipo, setTipo] = useState(products.tipo),
@@ -27,7 +27,7 @@ const ModalEditProduct = ({ products, getProducts, closeModal }) => {
       garantia,
     };
 
-    const res = await axios.put(`http://localhost:3001/produtos/atualizar-produto/${products._id}`, editedProduct);
+    const res = await api.put(`/produtos/atualizar-produto/${products._id}`, editedProduct);
 
     if (res.status !== 200) {
       return toast.error("Falha na edição!");
