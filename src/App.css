@@ -64,3 +64,7 @@ button {
   padding: 0.2rem;
   color: #5a76fa;
 }
+button:hover,
+i:hover {
+  transform: scale(1.1);
+}

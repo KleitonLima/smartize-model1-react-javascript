@@ -14,6 +14,9 @@
 .card > img {
   height: 9em;
 }
+.card:hover {
+  transform: scale(1.1);
+}
 .cardInfos {
   display: flex;
   flex-direction: column;
