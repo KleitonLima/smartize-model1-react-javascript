@@ -15,7 +15,7 @@
   height: 9em;
 }
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .cardInfos {
   display: flex;
